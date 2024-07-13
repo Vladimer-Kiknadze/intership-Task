@@ -1,3 +1,6 @@
+@if (isLoading$|async) {
+<app-spinner></app-spinner>
+}@else {
 <div class="main-content">
   <div class="users-table-container">
     <div class="users-header">
@@ -87,3 +90,4 @@
     </div>
   </div>
 </div>
+}

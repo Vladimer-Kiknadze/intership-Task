@@ -1,28 +1,31 @@
-@if (user$ | async; as userDetail) {
-<app-user-detail [userDetail]="userDetail"></app-user-detail>
-
-<div class="container">
-  @if (userPostDetail$ | async; as post) {
-  <div class="card">
-    <span class="postTitle">{{ post.title | truncateString : 3 }}</span>
-    <div class="card-body">
-      <p>
-        {{ post.body | truncateString : 10 }}
-      </p>
+@if (isLoading$ | async) {
+<app-spinner></app-spinner>
+}@else { @if (user$ | async; as userDetail) {
+<div class="main-content">
+  <app-user-detail [userDetail]="userDetail"></app-user-detail>
+  <div class="container">
+    @if (userPostDetail$ | async; as post) {
+    <div class="card">
+      <span class="postTitle">{{ post.title | truncateString : 3 }}</span>
+      <div class="card-body">
+        <p>
+          {{ post.body | truncateString : 10 }}
+        </p>
+      </div>
+      <div class="card-footer">
+        <button (click)="showPopup(post)" class="button detail btn-stylized">
+          <i class="fa-solid fa-circle-info"></i>
+          Details
+        </button>
+      </div>
+      @if (popUpIsVisible && selectedUser === post){
+      <app-popup
+        (PopupEmitter)="hidePopup($event)"
+        [user]="selectedUser"
+      ></app-popup>
+      }
     </div>
-    <div class="card-footer">
-      <button (click)="showPopup(post)" class="button detail btn-stylized">
-        <i class="fa-solid fa-circle-info"></i>
-        Details
-      </button>
-    </div>
-    @if (popUpIsVisible && selectedUser === post){
-    <app-popup
-      (PopupEmitter)="hidePopup($event)"
-      [user]="selectedUser"
-    ></app-popup>
     }
   </div>
-  }
 </div>
-}
+} }

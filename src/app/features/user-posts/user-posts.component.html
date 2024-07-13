@@ -1,5 +1,7 @@
-@if (user$ | async; as userDetail) {
+@if (isLoading$|async) {
 
+<app-spinner></app-spinner>
+}@else { @if (user$ | async; as userDetail) {
 <app-user-detail [userDetail]="userDetail"> </app-user-detail>
 
 <div class="container">
@@ -26,4 +28,4 @@
   </div>
   }
 </div>
-}
+} }

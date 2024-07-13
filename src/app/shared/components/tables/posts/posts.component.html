@@ -1,3 +1,6 @@
+@if (isLoading$|async) {
+<app-spinner></app-spinner>
+}@else {
 <div class="main-content">
   <div class="posts-table-container">
     <div class="users-header">
@@ -26,7 +29,7 @@
             <td>
               <a class="button" [routerLink]="['', 'posts', post.userId]">
                 <span>Posts: </span>
-                <i class="fa-solid fa-paste"></i>
+                <i class="fa-solid fa-table-list"></i>
               </a>
             </td>
           </tr>
@@ -36,3 +39,4 @@
     </div>
   </div>
 </div>
+}
