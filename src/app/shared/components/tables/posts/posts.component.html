@@ -1,36 +1,38 @@
 <div class="main-content">
-  <div class="table-container">
+  <div class="posts-table-container">
     <div class="users-header">
       <h3>Posts</h3>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Author</th>
-          <th>Post title</th>
-          <th>Detail</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (post of posts$ |async ; track post.id) {
-        <tr>
-          <td>
-            <span>Name: </span>
-            {{ post.authorName }}
-          </td>
-          <td>
-            <span>Post Title: </span>
-            {{ post.title }}
-          </td>
-          <td class="button">
-            <a [routerLink]="['', 'posts', post.userId]">
-              <span>Posts: </span>
-              <i class="fa-solid fa-paste"></i>
-            </a>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
+    <div class="table-container">
+      <table>
+        <thead class="sticky-thead">
+          <tr>
+            <th>Author</th>
+            <th>Post title</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (post of posts$ |async ; track post.id) {
+          <tr>
+            <td>
+              <span>Name: </span>
+              {{ post.authorName }}
+            </td>
+            <td>
+              <span>Post Title: </span>
+              {{ post.title }}
+            </td>
+            <td class="button">
+              <a [routerLink]="['', 'posts', post.userId]">
+                <span>Posts: </span>
+                <i class="fa-solid fa-paste"></i>
+              </a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

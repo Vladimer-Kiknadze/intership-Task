@@ -30,7 +30,6 @@ export class UserPostDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       const id = params.get('id');
-      console.log(this.userPostDetail$);
 
       if (id) {
         this.postService.getUserPostDetail(id);

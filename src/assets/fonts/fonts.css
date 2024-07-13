@@ -1,0 +1,27 @@
+@font-face {
+  font-family: NeueCrocoSansMedium;
+  src: url(/assets/fonts/NeueCrocoSansMedium.woff2?v=4) format("woff2"),
+    url(/assets/fonts/NeueCrocoSansMedium.woff?v=4) format("woff"),
+    url(/assets/fonts/NeueCrocoSansMedium.ttf?v=4) format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: NeueCrocoSansRegular;
+  src: url(/assets/fonts/NeueCrocoSansRegular.woff2?v=4) format("woff2"),
+    url(/assets/fonts/NeueCrocoSansRegular.woff?v=4) format("woff"),
+    url(/assets/fonts/NeueCrocoSansRegular.ttf?v=4) format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: NeueCrocoSansRegularMKH;
+  src: url(/assets/fonts/NeueCrocoSansRegularMKH.woff2?v=4) format("woff2"),
+    url(/assets/fonts/NeueCrocoSansRegularMKH.woff?v=4) format("woff"),
+    url(/assets/fonts/NeueCrocoSansRegularMKH.ttf?v=4) format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}

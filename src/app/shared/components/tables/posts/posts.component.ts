@@ -13,7 +13,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class PostsComponent {
   private readonly postService = inject(PostService);
-
+  private readonly router = inject(Router);
   posts$ = this.postService.postsWithAuthor$;
 
   constructor() {

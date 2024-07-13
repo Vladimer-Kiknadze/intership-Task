@@ -1,10 +1,6 @@
 @if (user$ | async; as userDetail) {
 
-<app-user-detail
-  [userDetail]="userDetail"
-  [postsAmount]="userPosts$.value.length"
->
-</app-user-detail>
+<app-user-detail [userDetail]="userDetail"> </app-user-detail>
 
 <div class="container">
   @for (user of userPosts$ | async ; track user.id) {
@@ -32,5 +28,4 @@
   </div>
   }
 </div>
-
 }

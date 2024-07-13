@@ -10,5 +10,4 @@ import { User } from '../../shared/types/user.model';
 })
 export class UserDetailComponent {
   @Input({ required: true }) userDetail!: User;
-  @Input({ required: true }) postsAmount!: number;
 }
