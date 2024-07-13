@@ -1,5 +1,5 @@
 export interface PostWithAuthor {
-  authorName: string | null;
+  authorName: string | undefined;
   userId: number;
   id: number;
   title: string;

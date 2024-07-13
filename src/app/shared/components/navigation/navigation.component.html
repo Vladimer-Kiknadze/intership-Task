@@ -1,12 +1,22 @@
 <div class="sidebar">
-  <div class="buttons">
-    <div class="users">
-      <i class="fa-solid fa-users"></i>
-      <button class="user-button">Users</button>
-    </div>
-    <div class="posts">
-      <i class="fa-solid fa-paste"></i>
-      <button class="post-button">Posts</button>
-    </div>
-  </div>
+  <nav class="buttons">
+    <ul>
+      <li routerLinkActive="active">
+        <a routerLink="/home">
+          <div class="users">
+            <i class="fa-solid fa-users"></i>
+            <button class="user-button">Users</button>
+          </div>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/allPost">
+          <div class="posts">
+            <i class="fa-solid fa-paste"></i>
+            <button class="post-button">Posts</button>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { userPosts } from '../../types/userPosts.model';
+import { userPost } from '../../types/userPosts.model';
 
 @Component({
   selector: 'app-popup',
@@ -11,7 +11,7 @@ import { userPosts } from '../../types/userPosts.model';
 })
 export class PopupComponent {
   @Output() PopupEmitter = new EventEmitter<boolean>();
-  @Input() user!: userPosts;
+  @Input() user!: userPost;
 
   closePopup() {
     this.PopupEmitter.emit(false);

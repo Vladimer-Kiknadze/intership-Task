@@ -2,9 +2,7 @@
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
   max-width: 50%;
   margin: 0 auto;
   padding-top: 50px;
@@ -13,8 +11,9 @@
   .card {
     display: flex;
     flex-direction: column;
-    max-width: 250px;
-    min-width: 200px;
+    text-align: center;
+    max-width: 400px;
+
     width: 100%;
     overflow: hidden;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
@@ -22,6 +21,7 @@
     background: linear-gradient(to right, #00141e, #005783, #00141e);
 
     .card-body {
+      text-align: center;
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
       padding: 4rem 1rem;
       height: 100%;
@@ -33,12 +33,12 @@
       gap: 0.5rem;
     }
 
-    .userName {
+    .postTitle {
       padding: 0.65em 0.75em;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.9rem;
       background: #001e28;
-      text-align: start;
+      text-align: center;
       color: #fafafa;
     }
 

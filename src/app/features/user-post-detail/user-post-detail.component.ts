@@ -1,42 +1,39 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AsyncPipe, CommonModule } from '@angular/common';
+import { PostService } from '../../shared/services/post.service';
+import { AsyncPipe } from '@angular/common';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { UserService } from '../../shared/services/user.service';
+import { userPost } from '../../shared/types/userPosts.model';
 import { TruncateStringPipe } from '../../shared/pipes/truncate-string.pipe';
 import { PopupComponent } from '../../shared/components/popup/popup.component';
-import { UserDetailComponent } from '../user-detail/user-detail.component';
-import { userPost } from '../../shared/types/userPosts.model';
-import { BehaviorSubject, map, tap } from 'rxjs';
-import { PostService } from '../../shared/services/post.service';
 
 @Component({
-  selector: 'app-user-posts',
+  selector: 'app-user-post-detail',
   standalone: true,
-  imports: [
-    AsyncPipe,
-    TruncateStringPipe,
-    PopupComponent,
-    CommonModule,
-    UserDetailComponent,
-  ],
-  templateUrl: './user-posts.component.html',
-  styleUrls: ['./user-posts.component.scss'],
+  imports: [AsyncPipe, UserDetailComponent, TruncateStringPipe, PopupComponent],
+  templateUrl: './user-post-detail.component.html',
+  styleUrl: './user-post-detail.component.scss',
 })
-export class UserPostsComponent {
+export class UserPostDetailComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly userService = inject(UserService);
   private readonly postService = inject(PostService);
+  private readonly userService = inject(UserService);
 
   user$ = this.userService.userById$;
+
+  userPostDetail$ = this.postService.userPostDetail$;
   userPosts$ = this.postService.userPosts$;
   popUpIsVisible: boolean = false;
   selectedUser: userPost | null = null;
 
   ngOnInit(): void {
-    this.activatedRoute.queryParamMap.subscribe((params) => {
-      const id = params.get('userId');
+    this.activatedRoute.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      console.log(this.userPostDetail$);
+
       if (id) {
-        this.postService.getPostsByUserId(id);
+        this.postService.getUserPostDetail(id);
         this.userService.getUserById(id);
       }
     });

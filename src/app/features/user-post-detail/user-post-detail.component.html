@@ -1,28 +1,27 @@
 @if (user$ | async; as userDetail) {
-
 <app-user-detail
   [userDetail]="userDetail"
   [postsAmount]="userPosts$.value.length"
 ></app-user-detail>
 
 <div class="container">
-  @for (user of userPosts$ | async ; track user.id) {
+  @if (userPostDetail$ | async; as post) {
   <div class="card">
-    <span class="userName">{{ user.title | truncateString : 3 }}</span>
+    <span class="postTitle">{{ post.title | truncateString : 3 }}</span>
     <div class="card-body">
       <p>
-        {{ user.body | truncateString : 10 }}
+        {{ post.body | truncateString : 10 }}
       </p>
     </div>
     <div class="card-footer">
-      <div (click)="showPopup(user)" class="details">
+      <div (click)="showPopup(post)" class="details">
         <i class="fa-solid fa-circle-info"></i>
         <div class="details-info">
           <h5>Details</h5>
         </div>
       </div>
     </div>
-    @if (popUpIsVisible && selectedUser === user){
+    @if (popUpIsVisible && selectedUser === post){
     <app-popup
       (PopupEmitter)="hidePopup($event)"
       [user]="selectedUser"
@@ -31,5 +30,4 @@
   </div>
   }
 </div>
-
 }

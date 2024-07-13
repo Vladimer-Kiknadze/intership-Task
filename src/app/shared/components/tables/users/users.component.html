@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         @for (user of users$ | async ; track user.id) {
-        <tr (click)="onClickUser(user.id)">
+        <tr>
           <td>
             <span>ID: </span>
             {{ user.id }}
@@ -37,7 +37,7 @@
             <span>Company Name: </span>
             {{ user.company.name }}
           </td>
-          <td class="button">
+          <td class="button" (click)="onClickUser(user.id)">
             <span>Posts</span>
             <i class="fa-solid fa-paste"></i>
           </td>

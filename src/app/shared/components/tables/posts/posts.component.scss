@@ -1,0 +1,134 @@
+.main-content {
+  padding: 200px 0;
+  max-width: 50%;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    max-width: 80%;
+  }
+
+  & .table-container {
+    overflow-x: auto;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid #11283b;
+    border-top: none;
+    background-color: #001e28;
+    max-height: 500px;
+    overflow-y: auto;
+
+    & .users-header {
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      background-color: #00141d;
+
+      h3 {
+        position: relative;
+        color: #ffff;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #ffffff;
+          border-radius: 24px 24px 0 0;
+          height: 1px;
+        }
+      }
+    }
+
+    th,
+    td {
+      word-wrap: break-word;
+      color: rgb(255, 255, 255);
+      border: 1px solid #11283b;
+    }
+
+    & table {
+      width: 100%;
+      border-collapse: collapse;
+
+      @media (max-width: 1024px) {
+        width: 100% !important;
+        float: left;
+        display: block;
+        text-align: center;
+      }
+
+      th {
+        background-color: #00141e;
+        padding: 14px;
+        text-align: center;
+
+        @media (max-width: 1024px) {
+          display: none;
+        }
+      }
+
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          transition: 0.1s ease-in;
+          background-color: #01283b;
+        }
+
+        @media (max-width: 1024px) {
+          width: 100% !important;
+          float: left;
+          display: block;
+          text-align: center;
+        }
+
+        td {
+          word-wrap: break-word;
+          padding: 14px;
+          text-align: center;
+
+          &:first-child {
+            @media (max-width: 1024px) {
+              background-color: #00141e;
+            }
+          }
+
+          @media (max-width: 1024px) {
+            padding: 20px 0;
+            width: 100%;
+            float: left;
+            display: block;
+            text-align: center;
+          }
+
+          & span {
+            display: none;
+            margin: 0 5px;
+            @media (max-width: 1024px) {
+              display: inline-block;
+            }
+          }
+          & a {
+            all: unset;
+            display: inline-block;
+            padding: 5px 10px;
+            color: #387ea0;
+            transition: color 0.3s ease;
+            @media (max-width: 1024px) {
+              padding: 0;
+            }
+
+            &:hover {
+              color: #0b8ccc;
+              scale: 1.3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

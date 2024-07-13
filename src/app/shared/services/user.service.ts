@@ -4,6 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ENVIRONMENT } from '../../environments/environment';
 import { User } from '../types/user.model';
+import { userPost } from '../types/userPosts.model';
+import { Post, PostWithAuthor } from '../types/posts.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,31 +13,24 @@ import { User } from '../types/user.model';
 export class UserService {
   private readonly http = inject(HttpClient);
   private readonly env = inject(ENVIRONMENT);
-  private postsUrl = 'https://jsonplaceholder.typicode.com/posts';
-  private usersUrl = 'https://jsonplaceholder.typicode.com/users';
 
   users$ = new BehaviorSubject<User[]>([]);
+  userById$ = new BehaviorSubject<User | null>(null);
+  userPosts$ = new BehaviorSubject<userPost[]>([]);
 
   getUsers() {
-    return this.http.get<any>(this.usersUrl).subscribe((response) => {
-      this.users$.next(response);
-    });
+    return this.http
+      .get<User[]>(`${this.env.apiUrl}/users`)
+      .subscribe((response) => {
+        this.users$.next(response);
+      });
   }
 
-  getPostsWithAuthors(): Observable<any> {
-    return this.http.get<any[]>(this.postsUrl).pipe(
-      mergeMap((posts) => {
-        return this.http.get<any[]>(this.usersUrl).pipe(
-          map((users) => {
-            return posts.map((post) => {
-              return {
-                ...post,
-                authorName: users.find((user) => user.id === post.userId)?.name,
-              };
-            });
-          })
-        );
-      })
-    );
+  getUserById(id: string) {
+    return this.http
+      .get<User>(`${this.env.apiUrl}/users/${id}`)
+      .subscribe((response) => {
+        this.userById$.next(response);
+      });
   }
 }
