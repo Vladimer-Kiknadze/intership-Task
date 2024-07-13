@@ -28,6 +28,7 @@
               <th>Email</th>
               <th>Company</th>
               <th>Posts</th>
+              <th>Todo list</th>
             </tr>
           </thead>
           <tbody>
@@ -60,11 +61,17 @@
               <td>
                 <button
                   class="button btn-stylized"
-                  (click)="onClickUser(user.id)"
+                  (click)="onClickPosts(user.id)"
                 >
                   Posts
-                  <i class="fa-solid fa-paste"></i>
+                  <i class="fa-solid fa-table-list"></i>
                 </button>
+              </td>
+              <td>
+                <a class="button-todo" (click)="onClickTodos(user.id)">
+                  <span>Todo List</span>
+                  <i class="fa-solid fa-paste"></i>
+                </a>
               </td>
             </tr>
             }

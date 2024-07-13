@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
@@ -9,7 +9,7 @@ import { BehaviorSubject, combineLatest, map } from 'rxjs';
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [CommonModule, AsyncPipe, FormsModule],
+  imports: [CommonModule, AsyncPipe, FormsModule, RouterLink],
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
 })
@@ -39,8 +39,12 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers();
   }
 
-  onClickUser(userId: number) {
+  onClickPosts(userId: number) {
     this.router.navigate(['/posts'], { queryParams: { userId } });
+  }
+
+  onClickTodos(userId: number) {
+    this.router.navigate(['/todos'], { queryParams: { userId } });
   }
 
   onSearchChange(search: string) {

@@ -1,0 +1,43 @@
+<div class="main-content">
+  <div class="posts-table-container">
+    <div class="users-header">
+      <h3>Todo List</h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead class="sticky-thead">
+          <tr>
+            <th>Author</th>
+            <th>Post title</th>
+            <th>Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (todo of todosWithAuthor$ | async ; track todo.id) {
+          <tr>
+            <td>
+              <span>Name: </span>
+              {{ todo.authorName }}
+            </td>
+            <td>
+              <span>Post Title: </span>
+              {{ todo.title }}
+            </td>
+            <td>
+              <a class="button">
+                <span>completed: </span>
+                <!-- {{ todo.completed }} -->
+                @if (todo.completed) {
+                <i class="fa-solid fa-check completed"></i>
+                }@else {
+                <i class="fa-solid fa-xmark declined"></i>
+                }
+              </a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
