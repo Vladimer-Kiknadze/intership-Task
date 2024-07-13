@@ -112,6 +112,11 @@
       width: 100%;
       padding-top: 20px;
 
+      @media (max-width: 600px) {
+        flex-direction: row;
+        gap: 50px;
+      }
+
       & .link {
         display: flex;
         justify-content: center;
