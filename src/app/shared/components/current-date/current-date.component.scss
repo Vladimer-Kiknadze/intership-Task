@@ -1,0 +1,40 @@
+.container {
+  font-family: "Lato", sans-serif;
+  color: #189541;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 100px;
+  }
+}
+
+.display-date {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.display-time {
+  margin-top: 5px;
+  display: flex;
+  font-weight: bold;
+  border: 0.1px solid #189541;
+  padding: 4px 15px;
+  border-radius: 5px;
+  transition: ease-in-out 0.1s;
+  transition-property: background, box-shadow, color;
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+}
+
+.display-time:hover {
+  background: #189541;
+  box-shadow: 0 0 30px #189541;
+  color: #272727;
+  cursor: pointer;
+}

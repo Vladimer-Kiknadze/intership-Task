@@ -1,0 +1,189 @@
+.footer {
+  position: relative;
+  z-index: 11;
+  width: 100%;
+
+  & .footer__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #072c38;
+    padding: 8px 16px;
+
+    & .footer__banks,
+    & .footer__languages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+
+      & .footer__banks-img,
+      & .footer__lang {
+        margin: 4px;
+      }
+    }
+
+    & .footer__languages {
+      & .footer__lang {
+        &:first-child {
+          opacity: 1;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        background: #001e28;
+        border: 1px solid #093948;
+        border-radius: 100px;
+        cursor: pointer;
+        margin-left: 12px;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  & .footer__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 8px 16px;
+
+    & .footer__navigation {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      & .footer__category {
+        padding: 20px 0;
+
+        & .footer__category-title {
+          color: #ffffff;
+          font-size: 14px;
+          font-family: "Courier New", Courier, monospace;
+          font-weight: 500;
+          opacity: 0.8;
+          margin-bottom: 16px;
+        }
+
+        & .footer__content {
+          font-size: 12px;
+          font-weight: 100;
+          font-family: serif;
+          margin-bottom: 12px;
+          color: rgba(255, 255, 255, 0.6);
+          display: block;
+          cursor: pointer;
+        }
+
+        & .footer__social {
+          all: unset;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 14px;
+          margin-bottom: 12px;
+
+          & .footer__content {
+            margin: 7px;
+          }
+
+          & .fa-brands {
+            color: rgba(255, 255, 255, 0.6);
+            width: 10px;
+            margin-right: 4px;
+            position: relative;
+          }
+        }
+      }
+    }
+
+    & .footer__messengers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-top: 20px;
+
+      & .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.6;
+        margin-bottom: 12px;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+        color: #ffffff;
+
+        &:hover {
+          .footer__messengers-name {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        & .footer__messengers-name {
+          font-size: 12px;
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          text-transform: capitalize;
+          margin-right: 8px;
+          width: 0;
+          text-align: right;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    & .footer__header {
+      flex-direction: row;
+    }
+
+    & .footer__main {
+      flex-direction: row;
+
+      & .footer__navigation {
+        flex-direction: row;
+        width: 70%;
+
+        & .footer__category {
+          padding: 20px 12px;
+        }
+      }
+
+      & .footer__messengers {
+        width: 20%;
+        margin-right: 51px;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & .footer__header {
+      padding: 16px 32px;
+    }
+
+    & .footer__main {
+      padding: 16px 32px;
+
+      & .footer__navigation {
+        width: 47%;
+      }
+
+      & .footer__messengers {
+        width: 6%;
+      }
+    }
+  }
+}

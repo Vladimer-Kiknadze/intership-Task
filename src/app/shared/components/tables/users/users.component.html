@@ -1,0 +1,49 @@
+<div class="main-content">
+  <div class="table-container">
+    <div class="users-header">
+      <h3>Users</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Company</th>
+          <th>Posts</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users$ | async ; track user.id) {
+        <tr (click)="onClickUser(user.id)">
+          <td>
+            <span>ID: </span>
+            {{ user.id }}
+          </td>
+          <td>
+            <span>Name: </span>
+            {{ user.name }}
+          </td>
+          <td>
+            <span>Phone: </span>
+            {{ user.phone }}
+          </td>
+          <td>
+            <span>Email: </span>
+            {{ user.email }}
+          </td>
+          <td>
+            <span>Company Name: </span>
+            {{ user.company.name }}
+          </td>
+          <td class="button">
+            <span>Posts</span>
+            <i class="fa-solid fa-paste"></i>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

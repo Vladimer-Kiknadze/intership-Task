@@ -1,0 +1,70 @@
+<div class="footer">
+  <div class="footer__header">
+    <div class="footer__banks">
+      @for (bank of bankImages; track $index) {
+      <img class="footer__banks-img" [src]="bank.src" [alt]="bank.alt" />
+      }
+    </div>
+    <div class="footer__languages">
+      @for (lang of languageImages; track $index) {
+      <div class="footer__lang">
+        <img [src]="lang.src" [alt]="lang.alt" />
+      </div>
+      }
+    </div>
+  </div>
+  <div class="footer__main">
+    <div class="footer__navigation">
+      <div class="footer__category">
+        <h3 class="footer__category-title">ჩვენს შესახებ</h3>
+        <span class="footer__content">ზოგადი წესები</span>
+        <span class="footer__content">სპორტის წესები</span>
+        <span class="footer__content">სამორინის რეგლამენტი</span>
+        <span class="footer__content">შეზღუდული ქვეყნები</span>
+        <span class="footer__content">25+</span>
+      </div>
+      <div class="footer__category">
+        <h3 class="footer__category-title">გამომყევით</h3>
+        <a
+          href="https://www.facebook.com/crocobet"
+          class="footer__social"
+          target="_blank"
+        >
+          <i class="footer__social-image fa-brands fa-facebook"></i>
+          <span class="footer__content">Facebook</span>
+        </a>
+        <a
+          href="https://www.instagram.com/crocobet_com/"
+          class="footer__social"
+          target="_blank"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          <span class="footer__social-image footer__content">Instagram</span>
+        </a>
+        <a
+          href="https://www.youtube.com/@crocobet-7649"
+          class="footer__social"
+          target="_blank"
+        >
+          <i class="footer__social-image fa-brands fa-youtube"></i>
+          <span class="footer__content">Youtube</span></a
+        >
+      </div>
+      <div class="footer__category">
+        <h3 class="footer__category-title">საკონტაქტო ინფორმაცია</h3>
+        <span class="footer__content">*707</span>
+        <span class="footer__content">(032) 2597777</span>
+        <span class="footer__content">support&#128231;crocobet.com</span>
+        <span class="footer__content">სალაროები</span>
+      </div>
+    </div>
+    <div class="footer__messengers">
+      @for (img of messengerImages; track $index) {
+      <a href="#" class="link">
+        <span class="footer__messengers-name">{{ img.alt }}</span>
+        <img [src]="img.src" [alt]="img.alt" class="footer__messengers-img" />
+      </a>
+      }
+    </div>
+  </div>
+</div>

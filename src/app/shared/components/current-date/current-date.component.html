@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="display-date">
+    <span id="day">{{ currentDate | date : "EEEE" }}, </span>
+    <span id="daynum">{{ currentDate | date : "d" }} </span>
+    <span id="month">{{ currentDate | date : "MMMM" }} </span>
+    <span id="year">{{ currentDate | date : "yyyy" }} </span>
+  </div>
+  <div class="display-time">{{ currentDate | date : "HH:mm:ss" }}</div>
+</div>

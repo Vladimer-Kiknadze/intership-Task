@@ -1,0 +1,57 @@
+.sidebar {
+  min-width: 80px;
+  min-height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #072c38;
+  background-color: #001e28;
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50vh;
+    margin-top: -62px;
+
+    .users,
+    .posts {
+      cursor: pointer;
+      text-shadow: #189541 0.1px 0.5px 4px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      &:hover {
+        transition: 0.2s ease-in-out;
+        text-shadow: none;
+      }
+
+      .fa-users,
+      .fa-paste {
+        font-size: 1.5rem;
+        color: #fff9;
+      }
+
+      .user-button,
+      .post-button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "NeueCrocoSansMedium", sans-serif;
+        font-weight: 300;
+        width: 100%;
+        font-size: 1rem;
+        color: #fff9;
+      }
+    }
+  }
+}

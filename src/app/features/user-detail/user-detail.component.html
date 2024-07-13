@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="front side">
+    <div class="content">
+      <div class="table-container">
+        <div class="users-header">
+          <h3>{{ userDetail.name }} Profile</h3>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>UserName</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Company</th>
+              <th>Posts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span>ID: </span>
+                {{ userDetail.id }}
+              </td>
+              <td>
+                <span>Name: </span>
+                {{ userDetail.username }}
+              </td>
+              <td>
+                <span>Phone: </span>
+                {{ userDetail.phone }}
+              </td>
+              <td>
+                <span>Email: </span>
+                {{ userDetail.email }}
+              </td>
+              <td>
+                <span>Company Name: </span>
+                {{ userDetail.company.name }}
+              </td>
+              <td>{{ postsAmount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="back side">
+    <div class="content">
+      <h1></h1>
+      <form>
+        <label>Your Name :</label>
+        <input type="text" placeholder="Omar Khattab" />
+        <label>Your E-mail :</label>
+        <input type="text" placeholder="Example@mail.com" />
+        <label>Your message :</label>
+        <textarea placeholder="The Subject"></textarea>
+        <input type="submit" value="Done" />
+      </form>
+    </div>
+  </div> -->
+</div>
