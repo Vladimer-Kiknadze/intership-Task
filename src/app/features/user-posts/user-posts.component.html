@@ -12,12 +12,10 @@
       </p>
     </div>
     <div class="card-footer">
-      <div (click)="showPopup(user)" class="details">
+      <button (click)="showPopup(user)" class="button detail btn-stylized">
         <i class="fa-solid fa-circle-info"></i>
-        <div class="details-info">
-          <h5>Details</h5>
-        </div>
-      </div>
+        Details
+      </button>
     </div>
     @if (popUpIsVisible && selectedUser === user){
     <app-popup

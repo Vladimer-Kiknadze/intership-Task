@@ -59,10 +59,10 @@
             border: none;
             border-right: 1px solid #11283b;
           }
-          position: sticky; /* Make the thead sticky */
-          top: 0; /* Stick it to the top of the container */
-          background-color: #00141e; /* Match the background color */
-          z-index: 1; /* Ensure it is above other elements */
+          position: sticky;
+          top: 0;
+          background-color: #00141e;
+          z-index: 1;
         }
 
         th {
@@ -129,6 +129,11 @@
               &:hover {
                 color: #0b8ccc;
                 scale: 1.3;
+              }
+
+              &.button {
+                display: flex;
+                justify-content: center;
               }
             }
           }

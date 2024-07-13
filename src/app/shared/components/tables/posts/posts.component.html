@@ -23,8 +23,8 @@
               <span>Post Title: </span>
               {{ post.title }}
             </td>
-            <td class="button">
-              <a [routerLink]="['', 'posts', post.userId]">
+            <td>
+              <a class="button" [routerLink]="['', 'posts', post.userId]">
                 <span>Posts: </span>
                 <i class="fa-solid fa-paste"></i>
               </a>

@@ -101,11 +101,20 @@
           }
 
           .button {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             background: #189541;
             color: white;
             min-width: 60px;
             border-radius: 100px;
             padding: 10px 24px;
+
+            @media (max-width: 1024px) {
+              display: inline;
+              padding: 0 20px;
+            }
+
             &:hover {
               transition: 0.1s ease-in;
               color: white;

@@ -5,14 +5,14 @@
   background: rgba(0, 170, 255, 0.1);
   width: 100%;
   border-radius: 1rem;
-  border: 1px solid #1f4956;
 
   @media (max-width: 1024px) {
     max-width: 80%;
   }
 
   .users-header {
-    background: rgba(1, 125, 187, 0.1);
+    background: rgba(30, 119, 166, 0.2);
+    border-bottom: 1px solid #1e77a6;
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -30,12 +30,13 @@
   td {
     word-wrap: break-word;
     color: rgb(255, 255, 255);
-    border: 1px solid #1f4956;
+    border: 0.1px solid rgba(30, 119, 166, 0.2);
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
+    background: #001e28;
 
     @media (max-width: 1024px) {
       width: 100% !important;
