@@ -35,7 +35,6 @@ export class UserTodosComponent implements OnInit {
         this.todoService.getUserTodoList(id);
         this.todoService.getTodosWithAuthors(id);
       }
-      console.log(this.todosWithAuthor$);
     });
   }
 

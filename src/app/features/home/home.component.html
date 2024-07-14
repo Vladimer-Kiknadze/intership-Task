@@ -1,1 +1,6 @@
-<app-users></app-users>
+<app-users
+  [users]="users$ | async"
+  [userSearchControl]="userSearchControl"
+  (postsClick)="onPostsClick($event)"
+  (todosClick)="onTodosClick($event)"
+></app-users>

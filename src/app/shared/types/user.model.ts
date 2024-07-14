@@ -9,6 +9,11 @@ export interface User {
   company: Company;
 }
 
+export interface UserUpdate extends User {
+  lastName: string;
+  firstName: string;
+}
+
 export interface Address {
   street: string;
   suite: string;
