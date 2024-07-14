@@ -10,9 +10,8 @@
     max-width: 80%;
   }
 
-  .users-header {
-    background: rgba(30, 119, 166, 0.2);
-    border-bottom: 1px solid #1e77a6;
+  .user-header {
+    background: #062839;
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -31,6 +30,7 @@
     word-wrap: break-word;
     color: rgb(255, 255, 255);
     border: 0.1px solid rgba(30, 119, 166, 0.2);
+    border-top: none;
   }
 
   table {
@@ -45,9 +45,9 @@
     }
 
     th {
+      background: #00141e;
       padding: 14px;
       text-align: center;
-      font-size: 14px;
       font-weight: 400;
 
       @media (max-width: 1024px) {
@@ -74,7 +74,6 @@
         word-wrap: break-word;
         padding: 14px;
         text-align: center;
-        font-size: 13px;
 
         @media (max-width: 1024px) {
           padding: 20px 0;

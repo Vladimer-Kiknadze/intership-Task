@@ -1,7 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-// `SkipLoading` უნდა იყოს `HttpContextToken` იმპორტირებული
 import { HttpContextToken } from '@angular/common/http';
 
 export const SkipLoading = new HttpContextToken<boolean>(() => false);

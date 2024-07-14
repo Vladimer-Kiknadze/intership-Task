@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -42,13 +40,6 @@
       color: #fafafa;
     }
 
-    & .card-body {
-      .title {
-        font-size: 1.5rem;
-        text-transform: capitalize;
-      }
-    }
-
     & .card-footer {
       display: flex;
       justify-content: center;
@@ -76,24 +67,6 @@
 
         .fa-paste {
           color: white;
-        }
-      }
-
-      & .details {
-        cursor: pointer;
-        width: 100%;
-        font-size: 1.3rem;
-        display: flex;
-        border-radius: 50px;
-        gap: 0.5rem;
-        color: #0078a3;
-
-        &:hover {
-          .fa-circle-info,
-          .details-info {
-            transition: 0.1s ease-in-out;
-            color: #003c50;
-          }
         }
       }
     }

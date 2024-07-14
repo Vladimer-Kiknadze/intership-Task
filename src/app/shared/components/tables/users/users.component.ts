@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user.service';
 import { Router, RouterLink } from '@angular/router';
-
 import { FormsModule } from '@angular/forms';
 import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
 import { LoadingService } from '../../../services/loading.service';
@@ -19,11 +18,10 @@ export class UsersComponent implements OnInit {
   private readonly userService = inject(UserService);
   private readonly router = inject(Router);
   private readonly loadingService = inject(LoadingService);
+  private searchSubject$ = new BehaviorSubject<string>('');
+  public userSearch: string = '';
 
   isLoading$: Observable<boolean>;
-
-  public userSearch: string = '';
-  private searchSubject$ = new BehaviorSubject<string>('');
 
   users$ = combineLatest([this.userService.users$, this.searchSubject$]).pipe(
     map(([users, search]) => {

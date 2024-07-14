@@ -15,49 +15,52 @@
     position: fixed;
     top: 50vh;
     margin-top: -62px;
+    & ul {
+      list-style: none;
 
-    a {
-      all: unset;
+      a {
+        all: unset;
 
-      & .users,
-      & .posts {
-        cursor: pointer;
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-
-        &:hover {
-          .fa-users,
-          .fa-paste,
-          .user-button,
-          .post-button {
-            transition: 0.2s ease-in-out;
-            color: rgba(3, 202, 69, 0.5) !important;
-          }
-        }
-
-        & .fa-users,
-        & .fa-paste {
-          font-size: 1.5rem;
-          color: #fff9;
-        }
-
-        & .user-button,
-        & .post-button {
+        & .users,
+        & .posts {
           cursor: pointer;
-          background: none;
-          border: none;
+          margin: 10px;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
-          font-family: "NeueCrocoSansMedium", sans-serif;
-          font-weight: 300;
-          width: 100%;
-          font-size: 1rem;
-          color: #fff9;
+          margin-bottom: 10px;
+
+          &:hover {
+            .fa-users,
+            .fa-paste,
+            .user-button,
+            .post-button {
+              transition: 0.2s ease-in-out;
+              color: rgba(3, 202, 69, 0.5) !important;
+            }
+          }
+
+          & .fa-users,
+          & .fa-paste {
+            font-size: 1.5rem;
+            color: #fff9;
+          }
+
+          & .user-button,
+          & .post-button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "NeueCrocoSansMedium", sans-serif;
+            font-weight: 300;
+            width: 100%;
+            font-size: 1rem;
+            color: #fff9;
+          }
         }
       }
     }
