@@ -26,7 +26,7 @@ export class UserTodosComponent implements OnInit {
   private readonly loadingService = inject(LoadingService);
 
   todosWithAuthor$ = this.todoService.todosWithAuthor$;
-  isLoading$: Observable<boolean>;
+  isLoading$: Observable<boolean> = this.loadingService.isLoading$;
 
   ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((params) => {
@@ -36,9 +36,5 @@ export class UserTodosComponent implements OnInit {
         this.todoService.getTodosWithAuthors(id);
       }
     });
-  }
-
-  constructor() {
-    this.isLoading$ = this.loadingService.isLoading$;
   }
 }

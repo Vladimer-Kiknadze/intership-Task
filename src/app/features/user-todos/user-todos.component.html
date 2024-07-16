@@ -1,6 +1,6 @@
 @if (isLoading$ | async) {
 <app-spinner></app-spinner>
-} @else {
+}@else {
 <div class="main-content">
   <div class="posts-table-container">
     <div class="users-header">
@@ -16,7 +16,9 @@
           </tr>
         </thead>
         <tbody>
-          @for (todo of todosWithAuthor$ | async ; track todo.id) {
+          @if (isLoading$ | async) {
+          <app-spinner></app-spinner>
+          }@else{ @for (todo of todosWithAuthor$ | async ; track todo.id) {
           <tr>
             <td>
               <span>Name: </span>
@@ -37,7 +39,7 @@
               </a>
             </td>
           </tr>
-          }
+          } }
         </tbody>
       </table>
     </div>
